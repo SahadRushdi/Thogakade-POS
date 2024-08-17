@@ -1,14 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="controller.AddCustomerFormController"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="481.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddCustomerFormController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="72.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
+      <Label layoutX="177.0" layoutY="17.0" text="Add Customer Form" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="26.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="dateDob" layoutX="206.0" layoutY="381.0" prefHeight="32.0" prefWidth="188.0" promptText="DOB" />
+      <JFXTextField fx:id="txtId" alignment="BOTTOM_CENTER" layoutX="206.0" layoutY="94.0" prefHeight="38.0" prefWidth="188.0" promptText="ID">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtName" alignment="BOTTOM_CENTER" layoutX="206.0" layoutY="201.0" prefHeight="38.0" prefWidth="188.0" promptText="Name">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtAddress" alignment="BOTTOM_CENTER" layoutX="206.0" layoutY="262.0" prefHeight="38.0" prefWidth="188.0" promptText="Address">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXTextField>
+      <ComboBox fx:id="cmbTitle" layoutX="206.0" layoutY="155.0" prefHeight="32.0" prefWidth="188.0" promptText="Title" />
+      <JFXTextField fx:id="txtNumber" alignment="BOTTOM_CENTER" layoutX="206.0" layoutY="324.0" prefHeight="38.0" prefWidth="188.0" promptText="Number">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXTextField>
+      <JFXButton buttonType="RAISED" layoutX="436.0" layoutY="425.0" onAction="#btnAddOnAction" prefHeight="38.0" prefWidth="87.0" style="-fx-background-color: #0be881;" text="Add">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="313.0" layoutY="425.0" prefHeight="38.0" prefWidth="87.0" style="-fx-background-color: #f53b57;" text="Delete">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="195.0" layoutY="425.0" prefHeight="38.0" prefWidth="87.0" style="-fx-background-color: #0fbcf9;" text="Update">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="76.0" layoutY="425.0" prefHeight="38.0" prefWidth="87.0" style="-fx-background-color: #ffd32a;" text="Search">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </JFXButton>
+   </children>
 </AnchorPane>
