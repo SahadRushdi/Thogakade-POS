@@ -19,7 +19,7 @@
             <Font name="System Bold" size="22.0" />
          </font>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="177.0" layoutY="220.0" onAction="#btnViewCustomerFormOnAction" prefHeight="51.0" prefWidth="246.0" style="-fx-background-color: #18dcff;" text="View Customer Form">
+      <JFXButton buttonType="RAISED" layoutX="177.0" layoutY="215.0" onAction="#btnViewCustomerFormOnAction" prefHeight="51.0" prefWidth="246.0" style="-fx-background-color: #18dcff;" text="View Customer Form">
          <font>
             <Font name="System Bold" size="22.0" />
          </font>

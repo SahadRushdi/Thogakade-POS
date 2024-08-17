@@ -6,19 +6,21 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.DatePicker;
+import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import model.Customer;
 
+import java.net.URL;
 import java.util.List;
+import java.util.ResourceBundle;
 
-public class ViewFormController {
+public class ViewFormController implements Initializable {
 
-    @FXML
-    private ComboBox<?> cmbTitle;
-
+    public JFXTextField txtId;
+    public JFXTextField txtName;
+    public JFXTextField txtAddress;
     @FXML
     private TableColumn<?, ?> colAddress;
 
@@ -32,34 +34,36 @@ public class ViewFormController {
     private TableColumn<?, ?> colName;
 
     @FXML
-    private TableColumn<?, ?> colNumber;
-
-    @FXML
-    private DatePicker dateDob;
-
-    @FXML
     private TableView<Customer> tblCustomers;
 
-    @FXML
-    private JFXTextField txtAddress;
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        tblCustomers.getSelectionModel().selectedItemProperty().addListener(((observableValue, oldValue, newValue) -> {
+            setTextToValue(newValue);
+        }));
+    }
 
-    @FXML
-    private JFXTextField txtId;
-
-    @FXML
-    private JFXTextField txtName;
-
-    @FXML
-    private JFXTextField txtNumber;
+    private void setTextToValue(Customer newValue) {
+        txtId.setText(newValue.getId());
+        txtName.setText(newValue.getName());
+        txtAddress.setText(newValue.getAddress());
+    }
 
     @FXML
     void btnReloadOnAction(ActionEvent event) {
+        colID.setCellValueFactory(new PropertyValueFactory<>("id"));
+        colName.setCellValueFactory(new PropertyValueFactory<>("name"));
+        colAddress.setCellValueFactory(new PropertyValueFactory<>("address"));
+        colDob.setCellValueFactory(new PropertyValueFactory<>("dob"));
+
         List<Customer> customerList = DBConnection.getInstance().getConnection();
         ObservableList<Customer> customerObservableList = FXCollections.observableArrayList();
 
         customerList.forEach(obj -> {
             customerObservableList.add(obj);
         });
+
+        tblCustomers.setItems(customerObservableList);
     }
 
 }

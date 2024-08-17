@@ -9,8 +9,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="481.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddCustomerFormController">
+<AnchorPane prefHeight="482.0" prefWidth="588.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddCustomerFormController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" height="72.0" stroke="BLACK" strokeType="INSIDE" width="600.0" />
       <Label layoutX="177.0" layoutY="17.0" text="Add Customer Form" textFill="WHITE">

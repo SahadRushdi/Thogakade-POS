@@ -8,7 +8,7 @@ import java.util.List;
 public class DBConnection {
     private static DBConnection instance = new DBConnection();
     private List<Customer> connection;
-    private DBConnection() {
+    private DBConnection(){
         connection = new ArrayList<>();
     }
 
@@ -17,9 +17,12 @@ public class DBConnection {
     }
 
     public static DBConnection getInstance() {
-        if (null == instance) {
-            return instance = new DBConnection();
-        }
-        return instance;
+//        if (null == instance) {
+//            return instance = new DBConnection();
+//        }
+//        return instance;
+
+        //--------ABOVE IF CONDITION IN A TERNARY OPERATOR-------------
+        return null == instance?instance = new DBConnection():instance;
     }
 }
