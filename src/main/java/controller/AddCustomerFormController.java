@@ -8,8 +8,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
+import model.Customer;
 
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 public class AddCustomerFormController implements Initializable {
@@ -32,11 +34,6 @@ public class AddCustomerFormController implements Initializable {
     @FXML
     private JFXTextField txtNumber;
 
-    @FXML
-    void btnAddOnAction(ActionEvent event) {
-
-    }
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         ObservableList<String> titles = FXCollections.observableArrayList();
@@ -44,4 +41,19 @@ public class AddCustomerFormController implements Initializable {
         titles.add("Miss.");
         cmbTitle.setItems(titles);
     }
+
+    @FXML
+    void btnAddOnAction(ActionEvent event) {
+        String id = txtId.getText();
+        String name = txtName.getText();
+        String address = txtAddress.getText();
+        String number = txtNumber.getText();
+        String title = cmbTitle.getValue();
+        LocalDate dob = dateDob.getValue();
+
+        Customer customer = new Customer(id, name, address, number, title, dob);
+        System.out.println(customer);
+
+    }
+
 }
