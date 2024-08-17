@@ -1,6 +1,7 @@
 package controller;
 
 import com.jfoenix.controls.JFXTextField;
+import db.DBConnection;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -12,6 +13,7 @@ import model.Customer;
 
 import java.net.URL;
 import java.time.LocalDate;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class AddCustomerFormController implements Initializable {
@@ -53,6 +55,9 @@ public class AddCustomerFormController implements Initializable {
 
         Customer customer = new Customer(id, name, address, number, title, dob);
         System.out.println(customer);
+
+        List<Customer> customerList = DBConnection.getInstance().getConnection();
+        customerList.add(customer);
 
     }
 
