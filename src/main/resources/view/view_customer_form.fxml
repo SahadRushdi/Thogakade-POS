@@ -1,14 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.lang.String?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="controller.ViewFormController"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="511.0" prefWidth="726.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ViewFormController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0d157a" height="77.0" stroke="BLACK" strokeType="INSIDE" width="727.0" />
+      <Label layoutX="231.0" layoutY="19.0" prefHeight="38.0" prefWidth="266.0" text="View Customer Form" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="26.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tblCustomers" layoutX="19.0" layoutY="212.0" prefHeight="207.0" prefWidth="690.0" stylesheets="@../../../../../Thogakade-MVN-2024-08-12/src/main/resources/css/Table.css">
+         <columns>
+            <TableColumn fx:id="colID" prefWidth="88.00006103515625" text="ID" />
+            <TableColumn fx:id="colName" prefWidth="215.199951171875" text="Name" />
+            <TableColumn fx:id="colAddress" prefWidth="144.79998779296875" text="Address" />
+            <TableColumn fx:id="colNumber" prefWidth="126.4000244140625" text="Number" />
+            <TableColumn fx:id="colDob" prefWidth="116.00006103515625" text="DOB" />
+         </columns>
+         <styleClass>
+            <String fx:value="label" />
+            <String fx:value="dashboard-colour2" />
+         </styleClass>
+      </TableView>
+      <JFXButton buttonType="RAISED" layoutX="311.0" layoutY="439.0" onAction="#btnReloadOnAction" prefHeight="46.0" prefWidth="98.0" style="-fx-background-color: #0652DD;" stylesheets="@../../../../../Thogakade-MVN-2024-08-12/src/main/resources/css/Table.css" text="Reload" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <styleClass>
+            <String fx:value="dashboard-colour2" />
+            <String fx:value="btn" />
+         </styleClass>
+      </JFXButton>
+      <DatePicker fx:id="dateDob" layoutX="507.0" layoutY="143.0" prefHeight="38.0" prefWidth="195.0" promptText="DOB" />
+      <JFXTextField fx:id="txtId" alignment="BOTTOM_CENTER" layoutX="18.0" layoutY="88.0" prefHeight="38.0" prefWidth="188.0" promptText="ID">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtName" alignment="BOTTOM_CENTER" layoutX="266.0" layoutY="87.0" prefHeight="38.0" prefWidth="188.0" promptText="Name">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtAddress" alignment="BOTTOM_CENTER" layoutX="266.0" layoutY="143.0" prefHeight="38.0" prefWidth="188.0" promptText="Address">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXTextField>
+      <ComboBox fx:id="cmbTitle" layoutX="14.0" layoutY="150.0" prefHeight="38.0" prefWidth="195.0" promptText="Title" />
+      <JFXTextField fx:id="txtNumber" alignment="BOTTOM_CENTER" layoutX="511.0" layoutY="88.0" prefHeight="38.0" prefWidth="188.0" promptText="Number">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXTextField>
+   </children>
 </AnchorPane>
