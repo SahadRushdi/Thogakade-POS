@@ -21,6 +21,7 @@ public class ViewFormController implements Initializable {
     public JFXTextField txtId;
     public JFXTextField txtName;
     public JFXTextField txtAddress;
+    public JFXTextField txtNumber;
     @FXML
     private TableColumn<?, ?> colAddress;
 
@@ -32,6 +33,9 @@ public class ViewFormController implements Initializable {
 
     @FXML
     private TableColumn<?, ?> colName;
+
+    @FXML
+    private TableColumn<?, ?> colAddress1;
 
     @FXML
     private TableView<Customer> tblCustomers;
@@ -47,6 +51,7 @@ public class ViewFormController implements Initializable {
         txtId.setText(newValue.getId());
         txtName.setText(newValue.getName());
         txtAddress.setText(newValue.getAddress());
+        txtNumber.setText(newValue.getAddress());
     }
 
     @FXML
@@ -54,6 +59,7 @@ public class ViewFormController implements Initializable {
         colID.setCellValueFactory(new PropertyValueFactory<>("id"));
         colName.setCellValueFactory(new PropertyValueFactory<>("name"));
         colAddress.setCellValueFactory(new PropertyValueFactory<>("address"));
+        colAddress1.setCellValueFactory(new PropertyValueFactory<>("number"));
         colDob.setCellValueFactory(new PropertyValueFactory<>("dob"));
 
         List<Customer> customerList = DBConnection.getInstance().getConnection();
